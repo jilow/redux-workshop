@@ -1,0 +1,36 @@
+.DomainSearch {
+  display: flex;
+  flex-direction: column;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.DomainSearch input {
+  font-size: 0.9rem;
+}
+
+.DomainSearch pre {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  word-break: normal;
+  white-space: nowrap;
+  padding: 9px 14px;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+  border-radius: 4px;
+  padding: 1rem;
+  width: 100%;
+}
+
+.DomainSearch code {
+  width: 100%;
+  display: inline-block;
+}
+
+.DomainSearch strong {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
