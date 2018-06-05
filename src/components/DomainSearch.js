@@ -9,6 +9,7 @@ class DomainSearch extends Component {
     this.state = {
       domainName: this.props.domain.domainName
     }
+    this.fetchDomainAvailability = this.props.fetchDomainAvailability
   }
   handleChange(event) {
     const element = event.target
@@ -17,6 +18,8 @@ class DomainSearch extends Component {
   }
   handleSubmit(event) {
     event.preventDefault()
+    if (!this.state.domainName) return
+    this.fetchDomainAvailability(this.state.domainName)
   }
   render() {
     return (
@@ -39,7 +42,7 @@ class DomainSearch extends Component {
             <code>{ JSON.stringify(this.state) }</code>
           </pre>
         </div>
-        
+
       </div>
     )
   }
@@ -50,7 +53,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  
+  fetchDomainAvailability: domainName => dispatch(actions.fetchDomainAvailability(domainName))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(DomainSearch)

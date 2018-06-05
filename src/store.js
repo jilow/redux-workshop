@@ -6,7 +6,7 @@ import * as constants from './constants'
 
 const loggerMiddleware = createLogger()
 
-const store = createStore(rootReducer, constants.DEFAULT_DOMAIN_STATE, applyMiddleware(
+const store = createStore(rootReducer, applyMiddleware(
   thunkMiddleware,
   loggerMiddleware,
 ))

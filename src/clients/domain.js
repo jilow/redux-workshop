@@ -1,4 +1,4 @@
-import axios from 'axios'
+import request from 'axios'
 
 export default class DomainNameClient {
   
@@ -7,11 +7,11 @@ export default class DomainNameClient {
   }
 
   async isAvailable (domainName) {
-    const response = await request.get(this.host + '/domain/search', {
-      params: { 'domain_name': domainName }
+    const response = await request.post(this.host + '/post', {
+      available: true
     })
     try {
-      return response.data.data
+      return response.data.json.available
     } catch (error) {
       return false
     }
@@ -27,5 +27,3 @@ export default class DomainNameClient {
   }
 
 }
-
-export default DomainClient
